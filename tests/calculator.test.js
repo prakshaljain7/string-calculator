@@ -8,7 +8,7 @@ test("should return 0 for case of an empty string", () => {
 test("should return number for case of an single number in string", () => {
     const calculator = new Calculator();
     expect(calculator.Add("2")).toBe(2);
-    expect(calculator.Add("5")).toBe(2);
+    expect(calculator.Add("5")).toBe(5);
 });
 
 test("Should add two numbers provided in a string", () => {
