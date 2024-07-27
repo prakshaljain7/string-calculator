@@ -11,6 +11,12 @@ class Calculator {
         }
         new_str = new_str.replace(/\n/g, delimiter);
         const arr = new_str.split(delimiter).map((item) => parseInt(item));
+        const negative_numbers = arr.filter((number) => number < 0);
+        if (negative_numbers.length > 0) {
+            throw new Error(
+                `Negatives not allowed: ${negative_numbers.join(",")}`
+            );
+        }
         return arr.reduce((acc, itr) => acc + itr);
     }
 }

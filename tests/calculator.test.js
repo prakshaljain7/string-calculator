@@ -34,13 +34,13 @@ test("Should handle a different delimiter", () => {
 });
 
 test("Should throw an error for negative numbers", () => {
-    const calculator = new StringCalculator();
+    const calculator = new Calculator();
     expect(() => calculator.Add("1,-5,8")).toThrow("Negatives not allowed: -5");
 });
 
 test("Should give all negative numbers in case of exception", () => {
-    const calculator = new StringCalculator();
-    expect(() => calculator.Add("1,-5,8.-10,14")).toThrow(
-        "Negatives not allowed: -5,10"
+    const calculator = new Calculator();
+    expect(() => calculator.Add("1,-5,8,-10,14")).toThrow(
+        "Negatives not allowed: -5,-10"
     );
 });
