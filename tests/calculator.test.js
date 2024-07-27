@@ -5,6 +5,12 @@ test("should return 0 for case of an empty string", () => {
     expect(calculator.Add("")).toBe(0);
 });
 
+test("should return number for case of an single number in string", () => {
+    const calculator = new Calculator();
+    expect(calculator.Add("2")).toBe(2);
+    expect(calculator.Add("5")).toBe(2);
+});
+
 test("Should add two numbers provided in a string", () => {
     const calculator = new Calculator();
     expect(calculator.Add("2,5")).toBe(7);
