@@ -26,3 +26,15 @@ test("Should handle a different delimiter", () => {
     expect(calculator.Add("//;\n1;2")).toBe(3);
     expect(calculator.Add("//;\n3;4;7;10;11;14")).toBe(49);
 });
+
+test("Should throw an error for negative numbers", () => {
+    const calculator = new StringCalculator();
+    expect(() => calculator.Add("1,-5,8")).toThrow("Negatives not allowed: -5");
+});
+
+test("Should give all negative numbers in case of exception", () => {
+    const calculator = new StringCalculator();
+    expect(() => calculator.Add("1,-5,8.-10,14")).toThrow(
+        "Negatives not allowed: -5,10"
+    );
+});
